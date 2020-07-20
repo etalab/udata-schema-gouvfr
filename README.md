@@ -1,6 +1,12 @@
-# Schema
+# udata-schema
 
-Integration with schema.data.gouv.fr
+This udata plugin provides an integration with [schema.data.gouv.fr](https://schema.data.gouv.fr)
+
+## Features
+
+- Adds a schema button to resources with a schema
+- Displays a modal when clicking this button providing links to documentation and validation
+
 
 ## Usage
 

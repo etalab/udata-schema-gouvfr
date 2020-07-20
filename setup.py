@@ -61,7 +61,7 @@ setup(
     },
     license='MIT',
     zip_safe=False,
-    keywords='udata, harvester, Schema',
+    keywords='udata, schema, tableschema',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Programming Language :: Python',
@@ -70,8 +70,7 @@ setup(
         'Intended Audience :: Developers',
         'Topic :: System :: Software Distribution',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
 )
