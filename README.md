@@ -10,7 +10,7 @@ This udata plugin provides an integration with [schema.data.gouv.fr](https://sch
 
 ## Usage
 
-Install the plugin package in you udata environement:
+Install the plugin package in your udata environement:
 
 ```bash
 pip install udata-schema
