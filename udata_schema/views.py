@@ -21,11 +21,11 @@ def validata_url(resource):
 
 
 def resource_has_schema(ctx):
-    return 'resource' in ctx and ctx['resource'].schema
+    return ctx.get('resource') and ctx['resource'].schema
 
 
 def dataset_has_schema(ctx):
-    if 'dataset' not in ctx:
+    if ctx.get('dataset') is None:
         return False
     return any([r.schema is not None for r in ctx['dataset'].resources])
 
