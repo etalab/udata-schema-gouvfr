@@ -1,5 +1,5 @@
 '''
-udata-schema
+udata-schema-gouvfr
 
 Integration with schema.data.gouv.fr
 '''

@@ -1,4 +1,4 @@
-# udata-schema
+# udata-schema-gouvfr
 
 This udata plugin provides an integration with [schema.data.gouv.fr](https://schema.data.gouv.fr)
 
@@ -13,11 +13,11 @@ This udata plugin provides an integration with [schema.data.gouv.fr](https://sch
 Install the plugin package in your udata environement:
 
 ```bash
-pip install udata-schema
+pip install udata-schema-gouvfr
 ```
 
 Then activate it in your `udata.cfg`:
 
 ```python
-PLUGINS = ['schema']
+PLUGINS = ['schema-gouvfr']
 ```
