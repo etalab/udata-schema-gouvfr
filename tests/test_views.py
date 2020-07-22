@@ -4,7 +4,7 @@ from flask import render_template_string
 
 from udata.core.dataset.factories import DatasetFactory, ResourceFactory
 
-import udata_schema.views as schema_views
+import udata_schema_gouvfr.views as schema_views
 
 
 def render_resource_card(resource):
