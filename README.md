@@ -21,3 +21,9 @@ Then activate it in your `udata.cfg`:
 ```python
 PLUGINS = ['schema-gouvfr']
 ```
+
+## Configuration
+
+You can control this plugin behavior with the following `udata.cfg` parameters:
+
+- **`SCHEMA_GOUVFR_VALIDATA_URL`**: the URL to your [Validata](https://validata.fr/) instance (without trailing slash). **ex:** `https://validata.etalab.studio`

@@ -1,6 +1,6 @@
 from urllib.parse import urlencode
 
-from flask import Blueprint
+from flask import Blueprint, current_app
 
 from udata import theme
 from udata.frontend import template_hook
@@ -9,7 +9,7 @@ blueprint = Blueprint('schema', __name__, template_folder='templates')
 
 
 def validata_url(resource):
-    base = "https://validata.etalab.studio/table-schema"
+    base = current_app.config.get('SCHEMA_GOUVFR_VALIDATA_URL')
 
     query = urlencode({
         "input": "url",
@@ -17,7 +17,7 @@ def validata_url(resource):
         "url": resource.url,
     })
 
-    return f"{base}?{query}"
+    return f"{base}/table-schema?{query}"
 
 
 def resource_has_schema(ctx):

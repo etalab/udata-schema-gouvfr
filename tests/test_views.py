@@ -49,6 +49,7 @@ class ViewsTest:
         dataset = DatasetFactory(resources=[ResourceFactory(schema=None)])
         assert '' == render_base_modals(dataset=dataset)
 
+    @pytest.mark.options(SCHEMA_GOUVFR_VALIDATA_URL='https://validata.example.com')
     def test_base_modals_dataset_w_schema(self):
         resource = ResourceFactory(schema='etalab/irve')
         dataset = DatasetFactory(resources=[resource])
@@ -57,7 +58,7 @@ class ViewsTest:
 
         assert 'etalab/irve' in content
         assert f"schema-modal-Id{str(resource.id).replace('-', '')}" in content
-        assert 'https://validata.etalab.studio' in content
+        assert 'https://validata.example.com/table-schema' in content
         assert 'https://schema.data.gouv.fr' in content
 
     def test_base_modals_dataset_w_schemas(self):
