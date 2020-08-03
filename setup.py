@@ -40,13 +40,13 @@ tests_require = pip('test.pip')
 
 
 setup(
-    name='udata-schema',
-    version=__import__('udata_schema').__version__,
-    description=__import__('udata_schema').__description__,
+    name='udata-schema-gouvfr',
+    version=__import__('udata_schema_gouvfr').__version__,
+    description=__import__('udata_schema_gouvfr').__description__,
     long_description=long_description,
-    url='https://github.com/opendatateam/udata-schema',
-    author='Open Data Team',
-    author_email='contact@opendata.team',
+    url='https://github.com/etalab/udata-schema-gouvfr',
+    author='Etalab',
+    author_email='pypi@data.gouv.fr',
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
@@ -56,12 +56,12 @@ setup(
     },
     entry_points={
         'udata.views': [
-            'schema = udata_schema.views',
+            'schema = udata_schema_gouvfr.views',
         ],
     },
     license='MIT',
     zip_safe=False,
-    keywords='udata, harvester, Schema',
+    keywords='udata, schema, tableschema',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Programming Language :: Python',
@@ -70,8 +70,8 @@ setup(
         'Intended Audience :: Developers',
         'Topic :: System :: Software Distribution',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.7',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
 )

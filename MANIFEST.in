@@ -2,6 +2,6 @@ include LICENSE MANIFEST.in README.md CHANGELOG.md
 
 recursive-include requirements *
 
-recursive-include udata_schema *
+recursive-include udata_schema_gouvfr *
 
 global-exclude *~ *.egg *.pyc
