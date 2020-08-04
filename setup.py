@@ -56,7 +56,7 @@ setup(
     },
     entry_points={
         'udata.views': [
-            'schema = udata_schema_gouvfr.views',
+            'schema-gouvfr = udata_schema_gouvfr.views',
         ],
     },
     license='MIT',
