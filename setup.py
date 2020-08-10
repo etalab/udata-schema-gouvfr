@@ -58,6 +58,9 @@ setup(
         'udata.views': [
             'schema-gouvfr = udata_schema_gouvfr.views',
         ],
+        'udata.tasks': [
+            'schema-gouvfr = udata_schema_gouvfr.tasks',
+        ],
     },
     license='MIT',
     zip_safe=False,
