@@ -1,5 +1,6 @@
 import re
 import csv
+import uuid
 import codecs
 import logging
 
@@ -56,7 +57,7 @@ def set_irve_schemas(sources):
     log.info(f'Preparing to set the {IRVE_SCHEMA} schema on {len(sources)} resources')
     for source in sources:
         dataset_slug, resource_id = re.match(pattern, source).groups()
-        resource = get_resource(resource_id)
+        resource = get_resource(uuid.UUID(resource_id))
         if not resource:
             raise ValueError(f'Cannot find a resource with ID {resource_id}')
         resource.schema = IRVE_SCHEMA
