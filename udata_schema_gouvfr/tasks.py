@@ -58,6 +58,7 @@ def set_irve_schemas(sources):
         resource = get_resource(uuid.UUID(resource_id))
         if not resource:
             log.warning(f'Cannot find a resource with ID {resource_id}. It may have been deleted.')
+            continue
         resource.schema = IRVE_SCHEMA
         resource.save()
         log.info(f'Set the {IRVE_SCHEMA} on resource {resource_id} from dataset {dataset_slug}')
