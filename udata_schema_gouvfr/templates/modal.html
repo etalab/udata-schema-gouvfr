@@ -6,7 +6,7 @@
     :visible="false">
     <div class="modal-body">
       <p>
-        Cette ressource est associée au schéma <b>{{ resource.schema }}</b> ce qui signifie qu'elle doit en respecter la spécification.
+        Cette ressource est associée au schéma <b>{{ resource.schema }}</b> ce qui signifie qu'elle doit en respecter la spécification. Retrouvez <a href="{{ url_for('datasets.list', schema=resource.schema) }}" title="Ressources associées au schéma {{ resource.schema }}">les jeux de données associées à ce schéma</a>.
       </p>
 
       <h3>Documentation</h3>
