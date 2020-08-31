@@ -6,7 +6,7 @@
     :visible="false">
     <div class="modal-body">
       <p>
-        Cette ressource est associée au schéma <b>{{ resource.schema }}</b> ce qui signifie qu'elle doit en respecter la spécification. Retrouvez <a href="{{ url_for('datasets.list', schema=resource.schema) }}" title="Ressources associées au schéma {{ resource.schema }}">les jeux de données associés à ce schéma</a>.
+        Cette ressource est associée au schéma <b>{{ resource.schema }}</b> ce qui signifie qu'elle doit en respecter la spécification.
       </p>
 
       <h3>Documentation</h3>
@@ -48,6 +48,25 @@
           class="btn btn-success">
           <span class="fa fa-check"></span>
           Valider la ressource
+        </a>
+      </div>
+
+      <h3>Autres ressources</h3>
+
+      <p>
+        Il est possible de spécifier qu'une ressource respecte un schéma depuis l'espace d'administration en tant que producteur. Plusieurs ressources respectant ce schéma sont disponibles sur la plateforme.
+      </p>
+
+      <div>
+        <a
+          href="{{ url_for('datasets.list', schema=resource.schema) }}"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="Ressources associées au schéma {{ resource.schema }}"
+          class="btn btn-info"
+        >
+          <span class="fa fa-file"></span>
+          Voir les jeux de données associés à ce schéma
         </a>
       </div>
 
