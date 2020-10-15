@@ -51,6 +51,25 @@
         </a>
       </div>
 
+      <h3>Autres ressources</h3>
+
+      <p>
+        Il est possible de spécifier qu'une ressource respecte un schéma depuis l'espace d'administration en tant que producteur. Plusieurs ressources respectant ce schéma sont disponibles sur la plateforme.
+      </p>
+
+      <div>
+        <a
+          href="{{ url_for('datasets.list', schema=resource.schema) }}"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="Ressources associées au schéma {{ resource.schema }}"
+          class="btn btn-info"
+        >
+          <span class="fa fa-file"></span>
+          Voir les jeux de données associés à ce schéma
+        </a>
+      </div>
+
       <hr>
 
       <h3>À propos des schémas</h3>
