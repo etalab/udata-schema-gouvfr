@@ -1,5 +1,9 @@
 # Changelog
 
+## Current (in progress)
+
+- Nothing yet
+
 ## 1.2.0 (2020-10-16)
 
 - Link to datasets with the same schema from the schema modal [#4](https://github.com/etalab/udata-schema-gouvfr/pull/4)
