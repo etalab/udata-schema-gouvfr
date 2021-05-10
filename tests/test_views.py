@@ -34,7 +34,7 @@ class ViewsTest:
         assert '' == render_resource_card(resource=ResourceFactory(schema=None))
 
     def test_resource_card_resource_with_schema(self):
-        resource = ResourceFactory(schema='{"name": "etalab/irve"}')
+        resource = ResourceFactory(schema={"name": "etalab/irve"})
 
         content = render_resource_card(resource=resource)
 
