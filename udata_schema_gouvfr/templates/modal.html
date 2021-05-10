@@ -6,7 +6,11 @@
     :visible="false">
     <div class="modal-body">
       <p>
-        Cette ressource est associée au schéma <b>{{ resource.schema }}</b> ce qui signifie qu'elle doit en respecter la spécification.
+        <span>Cette ressource est associée au schéma <b>{{ resource.schema.name }}, </b></span>
+       {% if resource.schema.version %}
+          <span>version {{ resource.schema.version }}, </span>
+       {% endif %}
+       <span>ce qui signifie qu'elle doit en respecter la spécification.</span>
       </p>
 
       <h3>Documentation</h3>
