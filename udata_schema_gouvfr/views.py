@@ -46,7 +46,7 @@ def getSchemaUrl(schemas,current_schema,current_schema_version):
         return
 
 def loadCatalog(): 
-    r = requests.get('https://schema.data.gouv.fr/schemas/schemas.json')
+    r = requests.get(current_app.config.get('SCHEMA_CATALOG_URL'))
     try:
         return r.json()['schemas']
     except:
