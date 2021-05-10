@@ -75,19 +75,19 @@ def resource_schema_details(ctx):
 @template_hook('base.modals', when=dataset_has_schema)
 def resource_schema_modal(ctx):
     dataset = ctx['dataset']
-    schemas = loadCatalog()
+    schemas = load_catalog()
 
     documentation_urls = {}
     authorize_validation = {}
     validation_urls = {}
     for resource in [r for r in dataset.resources if r.schema]:
 
-        authorize_validation[resource.id] = isTableSchema(schemas, resource.schema['name'])
+        authorize_validation[resource.id] = is_table_schema(schemas, resource.schema['name'])
 
         if authorize_validation[resource.id]:
             schema_url = None
             if 'version' in resource.schema:
-                schema_url = getSchemaUrl(
+                schema_url = get_schema_url(
                     schemas,
                     resource.schema['name'],
                     resource.schema['version'],
