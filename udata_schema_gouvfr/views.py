@@ -10,7 +10,7 @@ import requests
 blueprint = Blueprint('schema', __name__, template_folder='templates')
 
 
-def validata_url(resource,schema_url=None):
+def validata_url(resource, schema_url=None):
     base = current_app.config.get('SCHEMA_GOUVFR_VALIDATA_URL')
     if(schema_url):
         query = urlencode({
@@ -27,30 +27,29 @@ def validata_url(resource,schema_url=None):
 
     return f"{base}/table-schema?{query}"
 
-def isTableSchema(schemas,current_schema):
-    try:
-        for schema in schemas:
-            if((schema['name'] == current_schema) & (schema['schema_type'] == 'tableschema')): return True
-        return False
-    except:
-        return False
 
-def getSchemaUrl(schemas,current_schema,current_schema_version):
-    try:
+def isTableSchema(schemas, current_schema):
+    if(schemas):
         for schema in schemas:
-            if(schema['name'] == current_schema): 
+            if((schema['name'] == current_schema) & (schema['schema_type'] == 'tableschema')):
+                return True
+    return False
+
+
+def getSchemaUrl(schemas, current_schema, current_schema_version):
+    if(schemas):
+        for schema in schemas:
+            if(schema['name'] == current_schema):
                 for version in schema['versions']:
-                    if(version['version_name'] == current_schema_version): return version['schema_url']
-        return
-    except:
-        return
+                    if(version['version_name'] == current_schema_version):
+                        return version['schema_url']
 
-def loadCatalog(): 
+
+def loadCatalog():
     r = requests.get(current_app.config.get('SCHEMA_CATALOG_URL'))
-    try:
+    if "schemas" in r.json():
         return r.json()['schemas']
-    except:
-        return
+
 
 def resource_has_schema(ctx):
     return ctx.get('resource') and ctx['resource'].schema
@@ -83,12 +82,17 @@ def resource_schema_modal(ctx):
     validation_urls = {}
     for resource in [r for r in dataset.resources if r.schema]:
 
-        authorize_validation[resource.id] = isTableSchema(schemas,resource.schema['name'])
+        print(resource.schema['name'])
+        authorize_validation[resource.id] = isTableSchema(schemas, resource.schema['name'])
 
         if(authorize_validation[resource.id]):
             schema_url = None
-            if("version" in resource.schema):
-                schema_url = getSchemaUrl(schemas,resource.schema['name'],resource.schema['version'])
+            if "version" in resource.schema:
+                schema_url = getSchemaUrl(
+                    schemas,
+                    resource.schema['name'],
+                    resource.schema['version']
+                )
             validation_urls[resource.id] = validata_url(resource, schema_url)
 
         documentation_urls[resource.id] = (
