@@ -31,7 +31,7 @@
         </a>
       </div>
 
-
+      {% if authorize_validation[resource.id] %}
       <h3>Validation</h3>
       <div class="alert alert-info">
         <p>
@@ -54,7 +54,8 @@
           Valider la ressource
         </a>
       </div>
-
+      {% endif %}
+      
       <h3>Autres ressources</h3>
 
       <p>
