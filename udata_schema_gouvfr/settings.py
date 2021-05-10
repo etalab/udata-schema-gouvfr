@@ -4,6 +4,7 @@ Default settings for udata-schema-gouvfr
 
 # The Validata instance URL
 SCHEMA_GOUVFR_VALIDATA_URL = 'https://validata.etalab.studio'
+SCHEMA_CATALOG_URL = 'https://schema.data.gouv.fr/schemas/schemas.json'
 
 # The permalink to the consolidated IRVE dataset's latest resource
 SCHEMA_GOUVFR_IRVE_STABLE_RESOURCE_URL = (
