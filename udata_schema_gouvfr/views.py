@@ -1,6 +1,7 @@
 from urllib.parse import urlencode
 
 from flask import Blueprint, current_app
+from udata.app import cache
 
 from udata import theme
 from udata.frontend import template_hook
@@ -37,6 +38,7 @@ def get_schema_url(schemas, current_schema, current_schema_version):
                         return version['schema_url']
 
 
+@cache.memoize(timeout=600)
 def load_catalog():
     r = requests.get(current_app.config.get('SCHEMA_CATALOG_URL'))
     r.raise_for_status()
