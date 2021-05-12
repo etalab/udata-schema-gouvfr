@@ -12,18 +12,14 @@ blueprint = Blueprint('schema', __name__, template_folder='templates')
 
 def validata_url(resource, schema_url=None):
     base = current_app.config.get('SCHEMA_GOUVFR_VALIDATA_URL')
-    if schema_url:
-        query = urlencode({
-            'input': 'url',
-            'schema_url': schema_url,
-            'url': resource.url,
-        })
-    else:
-        query = urlencode({
-            'input': 'url',
-            'schema_name': f"schema-datagouvfr.{resource.schema['name']}",
-            'url': resource.url,
-        })
+    if schema_url is None:
+        schema_url = f"schema-datagouvfr.{resource.schema['name']}"
+    
+    query = urlencode({
+        'input': 'url',
+        'schema_url': schema_url,
+        'url': resource.url,
+    })
 
     return f"{base}/table-schema?{query}"
 
