@@ -29,11 +29,7 @@ def validata_url(resource, schema_url=None):
 
 
 def is_table_schema(schemas, current_schema):
-    if schemas:
-        for schema in schemas:
-            if schema['name'] == current_schema and schema['schema_type'] == 'tableschema':
-                return True
-    return False
+    return any([s['name'] == current_schema and s['schema_type'] == 'tableschema' for s in (schemas or [])])
 
 
 def get_schema_url(schemas, current_schema, current_schema_version):
@@ -47,6 +43,7 @@ def get_schema_url(schemas, current_schema, current_schema_version):
 
 def load_catalog():
     r = requests.get(current_app.config.get('SCHEMA_CATALOG_URL'))
+    r.raise_for_status()
     if 'schemas' in r.json():
         return r.json()['schemas']
 
