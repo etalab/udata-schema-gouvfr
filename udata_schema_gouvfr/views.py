@@ -15,7 +15,7 @@ def validata_url(resource, schema_url=None):
     base = current_app.config.get('SCHEMA_GOUVFR_VALIDATA_URL')
     if schema_url is None:
         schema_url = f"schema-datagouvfr.{resource.schema['name']}"
-    
+
     query = urlencode({
         'input': 'url',
         'schema_url': schema_url,
@@ -26,7 +26,8 @@ def validata_url(resource, schema_url=None):
 
 
 def is_table_schema(schemas, current_schema):
-    return any([s['name'] == current_schema and s['schema_type'] == 'tableschema' for s in (schemas or [])])
+    return any([s['name'] == current_schema and
+            s['schema_type'] == 'tableschema' for s in (schemas or [])])
 
 
 def get_schema_url(schemas, current_schema, current_schema_version):
