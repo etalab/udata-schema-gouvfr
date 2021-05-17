@@ -27,7 +27,7 @@ def validata_url(resource, schema_url=None):
 
 def is_table_schema(schemas, current_schema):
     return any([s['name'] == current_schema and
-            s['schema_type'] == 'tableschema' for s in (schemas or [])])
+                s['schema_type'] == 'tableschema' for s in (schemas or [])])
 
 
 def get_schema_url(schemas, current_schema, current_schema_version):
