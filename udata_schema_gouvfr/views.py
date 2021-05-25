@@ -48,7 +48,7 @@ def load_catalog():
 
 
 def resource_has_schema(ctx):
-    return ctx.get('resource') and ctx['resource'].schema
+    return ctx.get('resource') and ctx['resource'].schema and ctx['resource'].schema['name']
 
 
 def dataset_has_schema(ctx):
