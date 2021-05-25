@@ -1,6 +1,6 @@
 # Changelog
 
-## Current (in progress)
+## 1.3.0 (2021-05-25)
 
 - Nothing yet
 
