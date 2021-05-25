@@ -34,7 +34,7 @@ class ViewsTest:
         assert '' == render_resource_card(resource=ResourceFactory(schema=None))
 
     def test_resource_card_resource_with_schema(self):
-        resource = ResourceFactory(schema='etalab/irve')
+        resource = ResourceFactory(schema={'name': 'etalab/irve'})
 
         content = render_resource_card(resource=resource)
 
@@ -48,27 +48,3 @@ class ViewsTest:
     def test_base_modals_dataset_no_schema(self):
         dataset = DatasetFactory(resources=[ResourceFactory(schema=None)])
         assert '' == render_base_modals(dataset=dataset)
-
-    @pytest.mark.options(SCHEMA_GOUVFR_VALIDATA_URL='https://validata.example.com')
-    def test_base_modals_dataset_w_schema(self):
-        resource = ResourceFactory(schema='etalab/irve')
-        dataset = DatasetFactory(resources=[resource])
-
-        content = render_base_modals(dataset=dataset)
-
-        assert 'etalab/irve' in content
-        assert f"schema-modal-Id{str(resource.id).replace('-', '')}" in content
-        assert 'https://validata.example.com/table-schema' in content
-        assert 'https://schema.data.gouv.fr' in content
-
-    def test_base_modals_dataset_w_schemas(self):
-        dataset = DatasetFactory(resources=[
-            ResourceFactory(schema='etalab/irve'),
-            ResourceFactory(schema='etalab/covoiturage'),
-        ])
-
-        content = render_base_modals(dataset=dataset)
-
-        assert 'etalab/irve' in content
-        assert 'etalab/covoiturage' in content
-        assert 2 == content.count('</modal>')
