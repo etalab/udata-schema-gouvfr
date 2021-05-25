@@ -1,6 +1,6 @@
 # Changelog
 
-## Current (in progress)
+## 1.3.1 (2021-05-25)
 
 - Add venv's activation in circle's configuration file for publish step [#8](https://github.com/etalab/udata-schema-gouvfr/pull/8)
 
