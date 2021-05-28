@@ -1,6 +1,6 @@
 # Changelog
 
-## Current (in progress)
+## 1.3.2 (2021-05-28)
 
 - Fix links in modal (Validata and data.gouv facet)
 - Fix to function which detect if resource has schema or not
