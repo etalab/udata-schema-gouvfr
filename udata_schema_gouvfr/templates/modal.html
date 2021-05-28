@@ -1,4 +1,4 @@
-{% for resource in dataset.resources -%}
+{% for resource in dataset.resources %}
   {%- if resource.schema %}
   <modal
     v-ref:schema-modal-Id{{ resource.id | replace('-', '') }}
