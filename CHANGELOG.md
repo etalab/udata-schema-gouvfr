@@ -1,5 +1,9 @@
 # Changelog
 
+## Current (in progress)
+
+- Nothing yet
+
 ## 1.3.2 (2021-05-28)
 
 - Fix links in modal (Validata and data.gouv facet)
