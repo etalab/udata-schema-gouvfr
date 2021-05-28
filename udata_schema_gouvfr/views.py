@@ -14,7 +14,7 @@ blueprint = Blueprint('schema', __name__, template_folder='templates')
 def validata_url(resource, schema_url=None):
     base = current_app.config.get('SCHEMA_GOUVFR_VALIDATA_URL')
     if schema_url is None:
-        schema_path = {"schema_name": "schema-datagouvfr."+resource['schema'].get('name')}
+        schema_path = {'schema_name': f"schema-datagouvfr.{resource['schema'].get('name')}"}
     else:
         schema_path = {"schema_url": schema_url}
 
