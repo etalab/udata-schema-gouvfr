@@ -1,5 +1,5 @@
-{% for resource in dataset.resources %}
-  {% if resource.schema %}
+{% for resource in dataset.resources -%}
+  {%- if resource.schema %}
   <modal
     v-ref:schema-modal-Id{{ resource.id | replace('-', '') }}
     title="Schéma associé"
@@ -83,5 +83,5 @@
       </p>
     </div>
   </modal>
-  {% endif %}
+  {% endif -%}
 {% endfor %}
