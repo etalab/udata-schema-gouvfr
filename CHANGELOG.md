@@ -2,7 +2,8 @@
 
 ## Current (in progress)
 
-- Nothing yet
+- Fix links in modal (Validata and data.gouv facet)
+- Fix to function which detect if resource has schema or not
 
 ## 1.3.1 (2021-05-25)
 
@@ -10,7 +11,7 @@
 
 ## 1.3.0 (2021-05-25)
 
-- Nothing yet
+- Add version schema if exists in modal [#7](https://github.com/etalab/udata-schema-gouvfr/pull/7)
 
 ## 1.2.0 (2020-10-16)
 
