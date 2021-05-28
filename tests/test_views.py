@@ -46,5 +46,5 @@ class ViewsTest:
         assert '' == render_base_modals(dataset=None)
 
     def test_base_modals_dataset_no_schema(self):
-        dataset = DatasetFactory(resources=[ResourceFactory(schema=None)])
+        dataset = DatasetFactory(resources=[ResourceFactory(schema={})])
         assert '' == render_base_modals(dataset=dataset)
