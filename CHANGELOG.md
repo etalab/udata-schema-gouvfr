@@ -4,13 +4,18 @@
 
 - Nothing yet
 
+## 1.3.2 (2021-05-28)
+
+- Fix links in modal (Validata and data.gouv facet)
+- Fix to function which detect if resource has schema or not
+
 ## 1.3.1 (2021-05-25)
 
 - Add venv's activation in circle's configuration file for publish step [#8](https://github.com/etalab/udata-schema-gouvfr/pull/8)
 
 ## 1.3.0 (2021-05-25)
 
-- Nothing yet
+- Add version schema if exists in modal [#7](https://github.com/etalab/udata-schema-gouvfr/pull/7)
 
 ## 1.2.0 (2020-10-16)
 

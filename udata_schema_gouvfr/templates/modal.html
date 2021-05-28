@@ -64,10 +64,10 @@
 
       <div>
         <a
-          href="{{ url_for('datasets.list', schema=resource.schema) }}"
+          href="{{ url_for('datasets.list', schema=resource.schema.name) }}"
           rel="noopener noreferrer"
           target="_blank"
-          title="Ressources associées au schéma {{ resource.schema }}"
+          title="Ressources associées au schéma {{ resource.schema.name }}"
           class="btn btn-info"
         >
           <span class="fa fa-file"></span>
