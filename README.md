@@ -1,3 +1,6 @@
+**⚠️ Those features have been (temporarily) moved to https://github.com/etalab/udata-gouvfr**
+
+
 # udata-schema-gouvfr
 
 This udata plugin provides an integration with [schema.data.gouv.fr](https://schema.data.gouv.fr)
