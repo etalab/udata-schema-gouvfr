@@ -3,8 +3,8 @@ from urllib.parse import urlencode
 from flask import Blueprint, current_app
 from udata.app import cache
 
-from udata import theme
-from udata.frontend import template_hook
+from udata_gouvfr import theme
+from udata_gouvfr.frontend import template_hook
 
 import requests
 

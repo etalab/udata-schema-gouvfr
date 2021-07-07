@@ -4,6 +4,8 @@ from flask import render_template_string, current_app
 
 from udata.core.dataset.factories import DatasetFactory, ResourceFactory
 
+from udata_gouvfr import frontend
+from udata_gouvfr.tests import GouvFrSettings
 import udata_schema_gouvfr.views as schema_views
 
 
@@ -21,6 +23,7 @@ def render_base_modals(dataset):
 
 @pytest.fixture
 def app(app):
+    frontend.init_app(app)
     app.register_blueprint(schema_views.blueprint)
     return app
 
@@ -34,6 +37,8 @@ def mock_catalog(requests_mock):
 @pytest.mark.usefixtures('clean_db')
 @pytest.mark.options(SCHEMA_CATALOG_URL='http://example.com/schemas')
 class ViewsTest:
+    settings = GouvFrSettings
+
     def test_resource_card_no_resource(self):
         assert '' == render_resource_card(resource=None)
 
