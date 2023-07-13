@@ -3,6 +3,7 @@ import pytest
 from flask import render_template_string, current_app
 
 from udata.core.dataset.factories import DatasetFactory, ResourceFactory
+from udata_front.tests import GouvFrSettings
 
 import udata_schema_gouvfr.views as schema_views
 
@@ -29,11 +30,12 @@ def app(app):
 def mock_catalog(requests_mock):
     requests_mock.get(current_app.config.get('SCHEMA_CATALOG_URL'), json={})
 
-
+@pytest.mark.usefixtures('app')
 @pytest.mark.frontend
-@pytest.mark.usefixtures('clean_db')
 @pytest.mark.options(SCHEMA_CATALOG_URL='http://example.com/schemas')
 class ViewsTest:
+    settings = GouvFrSettings
+
     def test_resource_card_no_resource(self):
         assert '' == render_resource_card(resource=None)
 

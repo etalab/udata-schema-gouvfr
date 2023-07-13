@@ -1,2 +1,3 @@
-udata>=2.1.4.dev
+udata>=6.0.0
+udata_front>=3.0.0
 requests

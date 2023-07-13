@@ -2,7 +2,7 @@
 
 ## Current (in progress)
 
-- Nothing yet
+- Replace mongo legacy image in CI [#11](https://github.com/etalab/udata-schema-gouvfr/pull/11)
 
 ## 1.3.2 (2021-05-28)
 
