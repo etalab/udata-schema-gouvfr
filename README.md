@@ -1,4 +1,4 @@
-** ⚠️ This repository is archived and functionnalities have been moved to https://github.com/etalab/udata-gouvfr/ (now moved to https://github.com/etalab/udata-front).**
+**⚠️ This repository is archived and functionnalities have been moved to https://github.com/etalab/udata-gouvfr/ (now moved to https://github.com/etalab/udata-front).**
 
 # udata-schema-gouvfr
 
